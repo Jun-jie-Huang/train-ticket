@@ -13,7 +13,7 @@ helm ls -n $namespace | grep ts- | awk '{print $1}' | xargs helm uninstall -n $n
 helm uninstall $rabbitmqRelease -n $namespace
 helm uninstall $nacosRelease -n $namespace
 helm uninstall $nacosDBRelease -n $namespace
-
+helm uninstall tsdb
 
 kubectl delete -f deployment/kubernetes-manifests/skywalking -n $namespace
 
